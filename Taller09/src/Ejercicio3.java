@@ -13,33 +13,32 @@ public class Ejercicio3 {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
 
-        String marca="";
-        int numMarcas , cont;
+        String marca = "";
+        int numMarcas, cont;
         char primLetra;
-        
-        
+
         System.out.print("Ingrese el numero de marcas de autos que desea almacenar: ");
         numMarcas = tcl.nextInt();
         tcl.nextLine();
-        
-        String marcas[]=new String[numMarcas]; // Se lo inicializa en este punto porque al inicalizarlo antes nos indica error ya que el valor al array se agrega en esta linea por el usuario
+
+        String marcas[] = new String[numMarcas]; // Se lo inicializa en este punto porque al inicalizarlo antes nos indica error ya que el valor al array se agrega en esta linea por el usuario
         System.out.println("Ingrese la marcas de los vehiculos: ");
-        for ( cont = 0; cont < numMarcas;) {
-            System.out.print("Marca " + (cont+1)+ ": ");
-            marca= tcl.nextLine();
-            primLetra= Character.toUpperCase(marca.charAt(0));
-            if (primLetra=='A'|| primLetra=='C'| primLetra=='T') {
+        for (cont = 0; cont < numMarcas;) {
+            System.out.print("Marca " + (cont + 1) + ": ");
+            marca = tcl.nextLine();
+            primLetra = Character.toUpperCase(marca.charAt(0));
+            if (primLetra == 'A' || primLetra == 'C' | primLetra == 'T') {
                 System.out.println("La marca no es valida  empieza con la letra A , C o T . Ingrese otra marca: ");
                 continue;
             }
             marcas[cont] = marca;
             cont++;
-             }
+        }
         System.out.println("\n Marcas almacenadas:");
-        for ( cont = 0; cont < marcas.length; cont++) {
+        for (cont = 0; cont < marcas.length; cont++) {
             System.out.println(marcas[cont]);
         }
-              tcl.close();
+        tcl.close();
     }
 }
 /***
